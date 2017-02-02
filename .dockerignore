@@ -1,0 +1,17 @@
+.git*
+log/*
+tmp/*
+tmp
+README.md
+.env
+.bundle
+vendor
+styleguide
+public/system
+public/uploads
+public/tmp
+coverage
+.DS_Store
+Dockerfile
+.gitignore
+.dockerignore
