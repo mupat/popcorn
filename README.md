@@ -1,5 +1,5 @@
 # Popcorn
-Simple webapp to administrate movie collections.
+Simple webapp to administrate a movie collection.
 
 ## Get up and running
 
@@ -12,15 +12,27 @@ make db
 make run
 ```
 
-NOTE: The default dockerfile is not production ready!
+NOTE: The default dockerfile is for development purpose only!
+
+Also possible to use the classic way for rails development
+
+```
+bundle install
+rails db:create
+rails db:migrate
+rails db:seed
+rails s -b 0.0.0.0
+```
 
 ## Database
-This app concentrates on the core facts for a movie with related actors and the producer. Pictures to the movies are also attachable.
+This app concentrates on the core facts for a movie with related actors and the producer. Pictures to the movies are also attachable. See [model diagram](doc/models_complete.png)
 
 ## Future Improvements/Development
 * production ready docker
 * more details for movies
 * add genres to categorize movies
-* add a real user rating
+* add user rating
 * add cover image for movies
 * get informations from third party api's like IMDB
+* allow adding of persons for actors and developers directly from UI
+* add show pages per movie
