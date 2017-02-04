@@ -3,7 +3,7 @@
 PROJECT = mupat/popcorn
 RAILS_ROOT = /popcorn
 PORT = 3000
-DOCKER = docker run --rm -it -v $(PWD):$(RAILS_ROOT)
+DOCKER = docker run --rm -it -v $(PWD):$(RAILS_ROOT) -v $(PWD)/tmp:$(RAILS_ROOT)/tmp
 DOCKER_PROJECT = $(DOCKER) $(PROJECT)
 
 build:

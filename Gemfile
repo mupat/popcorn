@@ -72,9 +72,10 @@ end
 group :development, :test do
   # gem 'byebug'
   gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl_rails'
   # gem 'rspec-core'
-  # gem 'autotest-rails'
-  # gem 'rspec-autotest', github: 'rspec/rspec-autotest'
+  gem 'autotest-rails'
+  gem 'rspec-autotest', github: 'rspec/rspec-autotest'
   # gem 'rspec-activejob'
   gem 'pry'
   gem 'pry-stack_explorer'
@@ -97,9 +98,8 @@ group :test do
   # gem 'capybara-webkit'
   # gem 'capybara-email'
   # gem 'database_cleaner'
-  # gem 'shoulda-matchers', github: 'thoughtbot/shoulda-matchers'
+  gem 'shoulda-matchers', github: 'thoughtbot/shoulda-matchers'
   gem 'simplecov', require: false
-  gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec_junit_formatter', '0.2.2'
   gem 'codecov', require: false

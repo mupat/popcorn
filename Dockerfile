@@ -21,7 +21,7 @@ ENV LANG=C.UTF-8 \
 WORKDIR $RAILS_ROOT
 # COPY Gemfile* ./
 RUN gem install bundler && gem install rails
-# COPY . ./
+COPY . ./
 
 ENV BUNDLE_GEMFILE=$RAILS_ROOT/Gemfile \
     BUNDLE_JOBS=2 \

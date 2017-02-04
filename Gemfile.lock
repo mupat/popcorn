@@ -16,10 +16,25 @@ GIT
       activerecord (>= 4.2, < 5.1)
       request_store (~> 1.0)
 
+GIT
+  remote: https://github.com/rspec/rspec-autotest.git
+  revision: 93ecc278b848adbc5b1f9178a713630b6ff811e7
+  specs:
+    rspec-autotest (1.0.1)
+      rspec-core (>= 2.99.0.beta1, < 4.0.0)
+
+GIT
+  remote: https://github.com/thoughtbot/shoulda-matchers.git
+  revision: 9416f687c03cea9b5f59a7127a8931e880f60f0e
+  specs:
+    shoulda-matchers (3.1.2)
+      activesupport (>= 4.0.0)
+
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
   specs:
+    ZenTest (4.11.1)
     actioncable (5.0.1)
       actionpack (= 5.0.1)
       nio4r (~> 1.2)
@@ -64,6 +79,8 @@ GEM
       activerecord (>= 3.0)
     autoprefixer-rails (6.7.2)
       execjs
+    autotest-rails (4.2.1)
+      ZenTest (~> 4.5)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -211,6 +228,7 @@ DEPENDENCIES
   active_link_to
   auto_strip_attributes
   autoprefixer-rails
+  autotest-rails
   better_errors
   binding_of_caller
   carrierwave!
@@ -224,9 +242,11 @@ DEPENDENCIES
   rails (= 5.0.1)
   rails-assets-jquery (~> 2.2.0)!
   rails-assets-normalize.css!
+  rspec-autotest!
   rspec-rails (~> 3.5)
   rspec_junit_formatter (= 0.2.2)
   sass-rails
+  shoulda-matchers!
   simplecov
   spring
   sqlite3
