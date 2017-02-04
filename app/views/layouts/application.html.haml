@@ -7,6 +7,7 @@
 
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
+    %link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
     = csrf_meta_tags
 
     %title
@@ -14,10 +15,25 @@
       | Popcorn
 
   %body
-    - if notice && !notice.blank?
-      .flash.flash--success.flash--visible= notice
+    %nav.top-nav
+      .container
+        .nav-wrapper
+          .brand-logo
+            = link_to root_path do
+              %i.material-icons videocam
+            = yield :site_title
 
-    - if alert && !alert.blank?
-      .flash.flash--error.flash--visible= alert
+        %ul#nav-mobile.right
+          - if content_for?(:top_menu)
+            = yield :top_menu
+          - else
+            %li= link_to t('.new'), new_movie_path()
 
-    = yield
+    .container
+      - if notice && !notice.blank?
+        .card-panel.teal.darken-1= notice
+
+      - if alert && !alert.blank?
+        .card-panel.red.lighten-1= alert
+
+      = yield

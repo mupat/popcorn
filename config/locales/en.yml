@@ -37,20 +37,25 @@ en:
       carrierwave_download_error: "Couldn't download image."
       extension_whitelist_error: "You are not allowed to upload %{extension} files, allowed types: %{allowed_types}"
       extension_blacklist_error: "You are not allowed to upload %{extension} files, prohibited types: %{prohibited_types}"
-
   movies:
     index:
-      site_title: Collection
+      site_title: Movie Overview
     movie:
       edit: Edit
+      sure: Are you sure?
     edit:
-      headline: 'Edit of %{title}'
+      headline: Edit Movie
     create:
       headline: New Movie
     new:
       headline: New Movie
     form:
       submit: Save
+      back: Back
+      picture: Image
+  layouts:
+    application:
+      new: Add Movie
   directors:
     director:
       name: 'Director: %{name}'

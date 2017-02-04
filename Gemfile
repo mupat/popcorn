@@ -65,7 +65,7 @@ gem "auto_strip_attributes"
 # gem 'inky-rb', require: 'inky'
 
 source 'https://rails-assets.org' do
-  gem 'rails-assets-normalize.css'
+  gem 'rails-assets-materialize'
   # gem 'rails-assets-slick-carousel'
   # gem 'rails-assets-bootstrap-filestyle'
   # gem 'rails-assets-scrollreveal'

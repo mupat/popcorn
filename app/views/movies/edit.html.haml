@@ -1,4 +1,2 @@
-%h1
-  = t('.headline', title: resource.title)
-
+= content_for :site_title, t('.headline')
 = render 'form'

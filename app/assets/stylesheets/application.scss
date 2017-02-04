@@ -1,0 +1,35 @@
+//= require materialize
+
+span.badge.new::after { content: ''; }
+
+.divider {
+  margin: 25px 0;
+}
+
+.card-image {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 1
+  }
+
+  .card-title,
+  .btn-floating {
+    z-index: 2;
+  }
+
+  img {
+    max-height: 250px;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+.pictures {
+  margin: 0 -25px;
+}

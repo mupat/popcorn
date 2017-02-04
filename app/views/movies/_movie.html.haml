@@ -1,10 +1,20 @@
-%h1= movie.title
-%p= movie.summary
-= link_to t('.edit'), [:edit, movie]
+.col.s12.m6
+  .card
+    .card-image
+      = image_tag movie.pictures.first.file.url
+      %span.card-title= movie.title
+      = link_to [:edit, movie], class: 'btn-floating halfway-fab waves-effect waves-light red' do
+        %i.material-icons mode_edit
 
-= render movie.actors
-= render movie.director
-= render movie.pictures
+    .card-content
+      %p= movie.summary
+      .divider
+      .row.pictures
+        = render movie.pictures
+      .divider
+      = render movie.actors
 
-= link_to t('.delete'), { action: :destroy, id: movie.id }, method: :delete, data: { confirm: t('.sure') }
-%hr
+
+    .card-action
+      = link_to t('.delete'), { action: :destroy, id: movie.id }, method: :delete, data: { confirm: t('.sure') }
+      = render movie.director
