@@ -11,8 +11,10 @@ class MoviesController < ApplicationController
   end
 
   def create
-    @resource = Movie.create(permitted_params)
-    respond_with(resource)
+    movie = Movie.new(permitted_params)
+    movie.actors = actor_ids.map { |id| Actor.find_or_create_by(person_id: id, movie_id: movie.id) }
+    movie.save
+    respond_with(movie)
   end
 
   def edit
@@ -20,10 +22,14 @@ class MoviesController < ApplicationController
   end
 
   def update
-    params = permitted_params.to_h
-    actors = params.delete(:actor_ids).reject{ |id| id.length == 0 }.map { |id| Actor.find_or_create_by(person_id: id, movie_id: resource.id)}
-    resource.update_attributes(params.merge(actors: actors))
+    actors = actor_ids.map { |id| Actor.find_or_create_by(person_id: id, movie_id: resource.id) }
+    resource.update_attributes(permitted_params.merge(actors: actors))
     respond_with(resource)
+  end
+
+  def destroy
+    resource.destroy
+    respond_with resource
   end
 
   protected
@@ -39,6 +45,10 @@ class MoviesController < ApplicationController
   private
 
   def permitted_params
-    params.require(:movie).permit(:title, :summary, actor_ids: [], director_attributes: [:id, :person_id], pictures_attributes: [:id, :file])
+    params.require(:movie).permit(:title, :summary, director_attributes: [:id, :person_id], pictures_attributes: [:id, :file])
+  end
+
+  def actor_ids
+    params[:movie][:actor_ids].reject{ |id| id.length == 0 }
   end
 end

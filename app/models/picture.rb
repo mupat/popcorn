@@ -3,8 +3,6 @@ class Picture < ApplicationRecord
 
   belongs_to :picturable, polymorphic: true
 
-  validates :picturable_id, presence: true
-
   def name
     attributes['file']
   end

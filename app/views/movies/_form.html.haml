@@ -1,0 +1,19 @@
+= form_for resource do |form|
+  = form.text_field :title
+  = form.text_area :summary
+
+  = form.collection_select(:actor_ids, Person.all, :id, :name, { selected: form.object.actors.map(&:person_id) }, { multiple: true })
+
+  = form.fields_for :director, form.object.director || form.object.build_director do |director_form|
+    = director_form.collection_select(:person_id, Person.all, :id, :name, { selected: director_form.object.person_id })
+
+  = form.fields_for :pictures do |picture_form|
+    = image_tag(picture_form.object.file.url) if picture_form.object.file?
+    = picture_form.file_field :file
+    = picture_form.hidden_field :file_cache
+
+  = form.fields_for :pictures, form.object.pictures.build(picturable: resource) do |picture_form|
+    = picture_form.file_field :file
+    = picture_form.hidden_field :file_cache
+
+  = form.submit t('.submit')

@@ -6,4 +6,5 @@
 = render movie.director
 = render movie.pictures
 
+= link_to t('.delete'), { action: :destroy, id: movie.id }, method: :delete, data: { confirm: t('.sure') }
 %hr
