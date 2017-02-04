@@ -18,14 +18,14 @@ ENV LANG=C.UTF-8
 ENV LC_ALL=C.UTF-8
 
 WORKDIR /app
-COPY Gemfile* ./
-RUN gem install bundler && bundle install
-COPY . ./
+# COPY Gemfile* ./
+RUN gem install bundler && gem install rails
+# COPY . ./
 
 #RUN bundle exec rake assets:precompile
 
-ENTRYPOINT ["bundle", "exec"]
+# ENTRYPOINT ["bundle", "exec"]
 
 EXPOSE 3000
 
-CMD ["rails", "server", "-b", "0.0.0.0", "-p", "3000"]
+CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0", "-p", "3000"]
