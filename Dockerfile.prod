@@ -1,0 +1,24 @@
+# FOR PRODUCTION ONLY
+FROM ruby:2.4.0
+
+MAINTAINER Mupat <dev@mupat.net>
+
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev
+
+ENV LANG=C.UTF-8 \
+    LC_ALL=C.UTF-8 \
+    RAILS_ROOT=/popcorn
+
+WORKDIR $RAILS_ROOT
+
+COPY Gemfile Gemfile.lock ./
+RUN gem install bundler && bundle install --jobs 20 --retry 5 --without development test
+
+ENV RAILS_ENV=production \
+    RACK_ENV=production
+
+COPY . ./
+
+EXPOSE 3000
+
+CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0", "-p", "3000"]
