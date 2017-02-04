@@ -3,21 +3,16 @@ Simple webapp to administrate movie collections.
 
 ## Get up and running
 
-The easiest way is to use it with docker
+The easiest way is to use it with docker and the provided makefile
 
 ```
-docker build -t popcorn .
-docker run -v `pwd`:/app -it popcorn rake db:migrate
-docker run -p '3000:3000' -v `pwd`:/app -it popcorn
+make build
+make bundle
+make db
+make run
 ```
 
-NOTE: The current dockerfile is not production ready!
-
-Or the classic way
-```
-bundle install
-rake db:migrate
-```
+NOTE: The default dockerfile is not production ready!
 
 ## Database
 This app concentrates on the core facts for a movie with related actors and the producer. Pictures to the movies are also attachable.
