@@ -107,5 +107,5 @@ end
 
 group :development, :staging do
   # gem 'hologram'
-  # gem 'spring'
+  gem 'spring'
 end

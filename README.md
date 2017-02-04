@@ -18,3 +18,13 @@ Or the classic way
 bundle install
 rake db:migrate
 ```
+
+## Database
+This app concentrates on the core facts for a movie with related actors and the producer. Pictures to the movies are also attachable.
+
+## Future Improvements/Development
+* production ready docker
+* more details for movies
+* add genres to categorize movies
+* add a real user rating
+* get informations from third party api's like IMDB

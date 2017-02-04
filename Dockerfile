@@ -14,13 +14,18 @@ MAINTAINER Mupat <dev@mupat.net>
 #       ffmpegthumbnailer \
 #     && rm -rf /var/lib/apt/lists/*
 
-ENV LANG=C.UTF-8
-ENV LC_ALL=C.UTF-8
+ENV LANG=C.UTF-8 \
+    LC_ALL=C.UTF-8 \
+    RAILS_ROOT=/popcorn
 
-WORKDIR /app
+WORKDIR $RAILS_ROOT
 # COPY Gemfile* ./
 RUN gem install bundler && gem install rails
 # COPY . ./
+
+ENV BUNDLE_GEMFILE=$RAILS_ROOT/Gemfile \
+    BUNDLE_JOBS=2 \
+    BUNDLE_PATH=./vendor/bundle
 
 #RUN bundle exec rake assets:precompile
 
