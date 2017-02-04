@@ -11,10 +11,10 @@ class MoviesController < ApplicationController
   end
 
   def create
-    movie = Movie.new(permitted_params)
-    movie.actors = actor_ids.map { |id| Actor.find_or_create_by(person_id: id, movie_id: movie.id) }
-    movie.save
-    respond_with(movie)
+    create_resource
+    resource.actors = actors(resource.id)
+    resource.save
+    respond_with(resource)
   end
 
   def edit
@@ -22,8 +22,7 @@ class MoviesController < ApplicationController
   end
 
   def update
-    actors = actor_ids.map { |id| Actor.find_or_create_by(person_id: id, movie_id: resource.id) }
-    resource.update_attributes(permitted_params.merge(actors: actors))
+    resource.update_attributes(permitted_params.merge(actors: actors(resource.id)))
     respond_with(resource)
   end
 
@@ -42,13 +41,21 @@ class MoviesController < ApplicationController
     @resource ||= params[:id] ? Movie.find(params[:id]) : Movie.new
   end
 
+  def create_resource
+    @resource = Movie.new(permitted_params)
+  end
+
   private
 
   def permitted_params
     params.require(:movie).permit(:title, :summary, director_attributes: [:id, :person_id], pictures_attributes: [:id, :file])
   end
 
+  def actors(movie_id)
+    actor_ids.map { |id| Actor.find_or_create_by(person_id: id, movie_id: movie_id) }
+  end
+
   def actor_ids
-    params[:movie][:actor_ids].reject{ |id| id.length == 0 }
+    (ids = params[:movie][:actor_ids]) ? ids.reject{ |id| id.length == 0 } : []
   end
 end

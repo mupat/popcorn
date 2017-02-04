@@ -5,6 +5,8 @@ class Movie < ApplicationRecord
   has_many :actors, dependent: :destroy
   has_one  :director, dependent: :destroy
 
+  validates :title, :summary, presence: true
+
   accepts_nested_attributes_for :director
   accepts_nested_attributes_for :pictures, reject_if: lambda { |attributes| attributes['file'].blank? }
 end

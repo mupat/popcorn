@@ -1,4 +1,7 @@
 = form_for resource do |form|
+  - if form.object.errors.any?
+    = form.object.errors.full_messages
+
   = form.text_field :title
   = form.text_area :summary
 

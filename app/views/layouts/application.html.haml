@@ -14,4 +14,10 @@
       | Popcorn
 
   %body
+    - if notice && !notice.blank?
+      .flash.flash--success.flash--visible= notice
+
+    - if alert && !alert.blank?
+      .flash.flash--error.flash--visible= alert
+
     = yield

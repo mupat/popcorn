@@ -11,4 +11,9 @@ RSpec.describe Person, type: :model do
   it { expect(subject).to have_many(:contributors) }
   it { expect(subject).to have_many(:actors) }
   it { expect(subject).to have_many(:directors) }
+
+  describe '#name' do
+    subject { person.name() }
+    it { expect(subject).to eql "#{person.first_name} #{person.last_name}" }
+  end
 end
