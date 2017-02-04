@@ -1,6 +1,9 @@
 # Popcorn
 Simple webapp to administrate a movie collection.
 
+[![CircleCI](https://circleci.com/gh/mupat/popcorn/tree/master.svg?style=svg)](https://circleci.com/gh/mupat/popcorn/tree/master)
+[![codecov](https://codecov.io/gh/mupat/popcorn/branch/master/graph/badge.svg)](https://codecov.io/gh/mupat/popcorn)
+
 ## Get up and running
 
 The easiest way is to use it with docker and the provided makefile
@@ -26,6 +29,7 @@ rails s -b 0.0.0.0
 
 ## Database
 This app concentrates on the core facts for a movie with related actors and the producer. Pictures to the movies are also attachable. See [model diagram](doc/models_complete.png)
+[![model](doc/models_complete.png)](doc/models_complete.png)
 
 ## Future Improvements/Development
 * production ready docker
