@@ -1,3 +1,5 @@
+.PHONY: all db
+
 PROJECT = mupat/popcorn
 RAILS_ROOT = /popcorn
 PORT = 3000
@@ -14,9 +16,9 @@ run:
 	$(DOCKER) -p $(PORT):$(PORT) $(PROJECT)
 
 db:
-	$(DOCKER_PROJECT) rake db:create
-	$(DOCKER_PROJECT) rake db:migrate
-	$(DOCKER_PROJECT) rake db:seed
+	$(DOCKER_PROJECT) rails db:create
+	$(DOCKER_PROJECT) rails db:migrate
+	$(DOCKER_PROJECT) rails db:seed
 
 exec:
 	$(DOCKER_PROJECT) ${CMD}

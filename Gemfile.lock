@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/carrierwaveuploader/carrierwave.git
+  revision: 9ef68325dd5ea465b4d340af9a9def10934cd677
+  specs:
+    carrierwave (1.0.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
+
+GIT
   remote: https://github.com/globalize/globalize.git
   revision: 5b0ff2c92e7536f908dc82a4c2a15b04be79e821
   specs:
@@ -204,6 +213,7 @@ DEPENDENCIES
   autoprefixer-rails
   better_errors
   binding_of_caller
+  carrierwave!
   codecov
   factory_girl_rails
   faker

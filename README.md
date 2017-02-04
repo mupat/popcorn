@@ -22,4 +22,5 @@ This app concentrates on the core facts for a movie with related actors and the 
 * more details for movies
 * add genres to categorize movies
 * add a real user rating
+* add cover image for movies
 * get informations from third party api's like IMDB
