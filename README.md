@@ -1,7 +1,7 @@
 # Popcorn
 Simple webapp to administrate a movie collection.
 
-[![CircleCI](https://circleci.com/gh/mupat/popcorn/tree/master.svg?style=svg)](https://circleci.com/gh/mupat/popcorn/tree/master)
+[![CircleCI](https://circleci.com/gh/mupat/popcorn/tree/master.svg?style=shield)](https://circleci.com/gh/mupat/popcorn/tree/master)
 [![codecov](https://codecov.io/gh/mupat/popcorn/branch/master/graph/badge.svg)](https://codecov.io/gh/mupat/popcorn)
 
 ## Get up and running
