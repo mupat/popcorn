@@ -42,7 +42,6 @@ bower.json
 
 .sass-cache/
 .DS_Store
-doc/
 *.local.yml
 db/schema.rb
 .byebug_history
