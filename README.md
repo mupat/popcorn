@@ -33,6 +33,7 @@ This app concentrates on the core facts for a movie with related actors and the 
 
 ## Future Improvements/Development
 * production ready docker
+* allow to add more pictures in a row
 * more details for movies
 * add genres to categorize movies
 * add user rating
@@ -40,3 +41,4 @@ This app concentrates on the core facts for a movie with related actors and the 
 * get informations from third party api's like IMDB
 * allow adding of persons for actors and developers directly from UI
 * add show pages per movie
+* add integration tests
