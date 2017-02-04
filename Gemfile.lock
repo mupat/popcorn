@@ -214,8 +214,7 @@ DEPENDENCIES
   rails (= 5.0.1)
   rails-assets-jquery (~> 2.2.0)!
   rails-assets-normalize.css!
-  rspec-core
-  rspec-rails
+  rspec-rails (~> 3.5)
   rspec_junit_formatter (= 0.2.2)
   sass-rails
   simplecov

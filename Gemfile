@@ -71,8 +71,8 @@ end
 
 group :development, :test do
   # gem 'byebug'
-  gem 'rspec-rails'
-  gem 'rspec-core'
+  gem 'rspec-rails', '~> 3.5'
+  # gem 'rspec-core'
   # gem 'autotest-rails'
   # gem 'rspec-autotest', github: 'rspec/rspec-autotest'
   # gem 'rspec-activejob'
