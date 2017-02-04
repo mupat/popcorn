@@ -3,6 +3,9 @@ git_source(:github){ |repo_name| "https://github.com/#{repo_name}.git" }
 
 gem 'rails', '5.0.1'
 gem 'sqlite3'
+gem 'responders'
+gem 'haml'
+gem 'jquery-rails'
 # gem 'pg'
 # gem 'paperclip', '>= 5.0.0'
 # gem 'fog'
@@ -62,7 +65,6 @@ gem "auto_strip_attributes"
 # gem 'inky-rb', require: 'inky'
 
 source 'https://rails-assets.org' do
-  gem 'rails-assets-jquery', '~> 2.2.0'
   gem 'rails-assets-normalize.css'
   # gem 'rails-assets-slick-carousel'
   # gem 'rails-assets-bootstrap-filestyle'

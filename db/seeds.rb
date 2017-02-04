@@ -36,6 +36,6 @@ jones.actors = [
 jones.director = Director.find_or_create_by(person: spielberg, movie: jones)
 
 if jones.pictures.count == 0
-  jones.pictures = [Picture.create(remote_file_url: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTc5Nzc2OTk2OF5BMl5BanBnXkFtZTgwMDU0Nzg0NzE@._V1_.jpg', picturable: jones), Picture.create(remote_file_url: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTMyOTg0MjY2Ml5BMl5BanBnXkFtZTcwODcwMjE3MQ@@._V1_SY1000_CR0,0,1459,1000_AL_.jpg', picturable: jones)]
+  jones.pictures = [Picture.create(remote_file_url: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTI4OTgxMjQzMV5BMl5BanBnXkFtZTYwMTcwODc4._V1_.jpg', picturable: jones), Picture.create(remote_file_url: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTMyOTg0MjY2Ml5BMl5BanBnXkFtZTcwODcwMjE3MQ@@._V1_SY1000_CR0,0,1459,1000_AL_.jpg', picturable: jones)]
 end
 jones.save!

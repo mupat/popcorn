@@ -1,0 +1,9 @@
+%h1= movie.title
+%p= movie.summary
+= link_to t('.edit'), [:edit, movie]
+
+= render movie.actors
+= render movie.director
+= render movie.pictures
+
+%hr
