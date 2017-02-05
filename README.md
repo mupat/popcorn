@@ -32,7 +32,7 @@ This app concentrates on the core facts for a movie with related actors and the 
 [![model](doc/models_complete.png)](doc/models_complete.png)
 
 ## Future Improvements/Development
-* production ready docker
+* [x] production ready docker
 * allow to add more pictures in a row
 * more details for movies
 * add genres to categorize movies
